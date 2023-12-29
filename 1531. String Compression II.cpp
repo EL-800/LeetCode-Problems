@@ -2,11 +2,11 @@
 
 using namespace std;
 
+int dp[101][27][101][101];
 class Solution {
 private:
     string s;
-    int n, k;
-    int dp[101][27][101][101];
+    int n, k;    
 
     int SearchMin(int i = 0, int last = 26, int countLast = 0, int used = 0) {
         if (used > k)
