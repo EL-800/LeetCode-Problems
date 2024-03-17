@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#pragma GCC optimize("O3", "unroll-loops")
 
 using namespace std;
 
@@ -18,6 +19,13 @@ public:
         return ans;
     }    
 };
+
+auto init = []() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    return 'c';
+}();
 
 int main(){
     return 0;
