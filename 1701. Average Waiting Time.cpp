@@ -6,7 +6,7 @@ class Solution {
 public:
     double averageWaitingTime(vector<vector<int>>& customers) {
         int currTime = 0;
-        double avg, n = (double)customers.size();
+        double avg = 0, n = (double)customers.size();
         for (auto customer : customers) {
             currTime = max(customer[0], currTime) + customer[1];
             avg += double(currTime - customer[0]) / n;
