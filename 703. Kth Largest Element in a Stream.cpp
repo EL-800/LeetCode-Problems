@@ -9,7 +9,7 @@ private:
 
 public:
     KthLargest(int k, vector<int>& nums) {
-        k = this->k;
+        this->k = k;
         for (int num : nums)                     
             add(num);
     }
