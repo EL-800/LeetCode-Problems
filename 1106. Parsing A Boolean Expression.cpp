@@ -10,7 +10,7 @@ private:
             return c == 't';
         if (c == '!') {
             i++;
-            bool aux = CalculateExpr(expression, i);
+            bool aux = !CalculateExpr(expression, i);
             i++;
             return aux;
         }
@@ -18,10 +18,10 @@ private:
         i++;
         while (expression[i] != ')') {
             if (expression[i] == ',')
-                i++;        
-            else     
-                exps.push_back(CalculateExpr(expression, i));
+                i++;                                     
+            exps.push_back(CalculateExpr(expression, i));
         }
+        i++;
         if (c == '|')
             return any_of(exps.begin(), exps.end(), [](bool e) {return e;});
         if (c == '&')
