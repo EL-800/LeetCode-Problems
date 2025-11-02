@@ -17,10 +17,11 @@ public:
     int countUnguarded(int m, int n, vector<vector<int>>& guards, vector<vector<int>>& walls) {   
         this->m = m, this->n = n;
         grid.assign(m, vector<int>(n));     
-        for (auto wall : walls) 
-            grid[wall[0]][wall[1]] = 2;        
-        for (auto guard : guards) {
-            grid[guard[0]][guard[1]] = 2;
+        for (auto &wall : walls) 
+            grid[wall[0]][wall[1]] = 2; 
+        for (auto &guard : guards)
+            grid[guard[0]][guard[1]] = 2;       
+        for (auto &guard : guards) {            
             MarkCells(guard[0], guard[1], 1, 0);
             MarkCells(guard[0], guard[1], 0, 1);
             MarkCells(guard[0], guard[1], -1, 0);
