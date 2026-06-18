@@ -29,23 +29,7 @@ public:
             else if (s[i] == '%')
                 k = sizes[i] - 1 - k;
             else if (s[i] != '*' && sizes[i] == k + 1)
-                return s[i];
-            
-            /*
-            switch (s[i]) {
-            case '*':
-                break;
-            case '#':
-                if (k >= lens[i] / 2)
-                    k -= lens[i] / 2;
-                break;
-            case '%':
-                k = lens[i] - 1 - k;
-                break;
-            default: // s[i] is a character
-                if (lens[i] == k + 1)
-                    return s[i];
-            }*/
+                return s[i];                        
         }
 
         return '8';
