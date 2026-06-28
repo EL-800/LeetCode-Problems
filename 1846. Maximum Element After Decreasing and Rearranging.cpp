@@ -4,15 +4,14 @@ using namespace std;
 
 class Solution {
 public:
-    int maximumElementAfterDecrementingAndRearranging(vector<int>& arr) {
-        vector<int> copyArr = arr;
-        sort(copyArr.begin(), copyArr.end());
-        copyArr[0] = 1;
-        for (int i = 1; i < copyArr.size(); i++){
-            if (copyArr[i] - copyArr[i - 1] > 1)
-                copyArr[i] = copyArr[i - 1] + 1;            
+    int maximumElementAfterDecrementingAndRearranging(vector<int>& arr) {        
+        sort(arr.begin(), arr.end());
+        arr[0] = 1;
+        for (int i = 1; i < arr.size(); i++){
+            if (arr[i] - arr[i - 1] > 1)
+                arr[i] = arr[i - 1] + 1;            
         }
-        return *copyArr.rbegin();
+        return *arr.rbegin();
     }
 };
 
